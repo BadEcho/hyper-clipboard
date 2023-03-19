@@ -1,0 +1,12 @@
+<Project>
+	<PropertyGroup>
+		<UniversalProperties>$([MSBuild]::GetPathOfFileAbove('Universal.build.props', '$(MSBuildThisFileDirectory)..\'))</UniversalProperties>
+		<CoreProperties Condition="Exists($(UniversalProperties))">$(UniversalProperties)</CoreProperties>
+		<CoreProperties Condition="'$(CoreProperties)' == ''">src\Core\Directory.build.props</CoreProperties>
+	</PropertyGroup>
+	<Import Project="$(CoreProperties)"/>
+	<PropertyGroup>
+		<RepositoryUrl>https://github.com/BadEcho/hyper-clipboard</RepositoryUrl>
+		<CorePath Condition="'$(CorePath)' == ''">$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)\src\Core\src'))</CorePath>
+	</PropertyGroup>
+</Project>
