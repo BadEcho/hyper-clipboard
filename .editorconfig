@@ -374,6 +374,9 @@ dotnet_diagnostic.CA2248.severity = warning
 # CA2249: Consider using 'string.Contains' instead of 'string.IndexOf'
 dotnet_diagnostic.CA2249.severity = warning
 
+# CA2254: Template should be a static expression
+dotnet_diagnostic.CA2254.severity = suggestion
+
 # CA2300: Do not use insecure deserializer BinaryFormatter
 dotnet_diagnostic.CA2300.severity = warning
 
@@ -786,6 +789,7 @@ csharp_style_expression_bodied_accessors = true:silent
 csharp_style_expression_bodied_lambdas = true:suggestion
 csharp_indent_labels = one_less_than_current
 csharp_style_throw_expression = true:suggestion
+csharp_prefer_system_threading_lock = true:suggestion
 [*.{cs,vb}]
 #### Naming styles ####
 
